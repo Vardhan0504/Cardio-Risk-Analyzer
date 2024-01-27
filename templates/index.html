@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/style1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Open+Sans:wght@300&family=Ubuntu:wght@300&family=Varela&display=swap" rel="stylesheet">
+<body>
+    <div class="nav-bar">
+        <p class="website-name">HeartCareHealth.com</p>
+        
+        <div  class="white-border"><p>HOME</p></div>
+        <div class="white-border"><p>ABOUT</p></div>
+        <div class="white-border"><p>CONTACT US</p></div>
+        
+    </div>
+
+    <div class="front-page">
+        <img src="/static/images/girl-yoga-image.png" alt="girl doing yoga"/>
+        <div class="content-box">
+            <p>A different approach to health and wellness.</p>
+            
+            <div class="user-form">
+            <form action="/submit_form" method="post" onsubmit="return validateAndRedirect(event)">
+                <!-- Form elements go here -->
+                <label class="input-name" for="username">Name : </label>
+                    <input type="text" id="name" name="name" required>
+                    <br>
+                    <label class="input-name" for="email">Email : </label>
+                    <input type="text" id="email" name="email" required>
+                    <br>
+                    <button class="button" ><a href="{{ url_for('Home') }}?next={{ request.path }}">Sign in</a></button>
+            </form>
+            </div>
+        </div>
+        
+        
+
+    </div>
+</body>
+</html>
